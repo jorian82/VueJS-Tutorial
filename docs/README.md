@@ -17,8 +17,11 @@ Obviamente hay muchas formas de despellejar un gato, para más formas de crear u
 Inmediatamente se creará un folder con todos los archivos necesarios para empezar a desarrollar una aplicación vue.
 ## Estructura de directorios
 Vamos a ver una estructura como la siguiente:
+
 ![Estructura de en aplicación vue](./01-vue-app-tree.png)
+
 Inicialmente contamos con 2 folders: _public_ y _src_. Vamos a describir la funcionalidad de cada uno de ellos:
+
 ### public
 Dentro de éste folder vamos a tener todos los archivos estáticos que componen nuestra aplicación, como se ve en la imagen ya cuenta con un par de archivos **favicon.ico** e **index.html**, difilmente vamos a agregar otros archivos aqui, basicamente es el punto de entrada para nuestra aplicación.
 ##### favicon.ico
@@ -39,8 +42,11 @@ Como su nombre lo indica aquí vamos a almacenar las definiciones de los compone
 Un componente no es otra cosa más que un archivo con extensión vue, mismo que contiene un bloque de plantilla, seguido de un bloque script ya sea javascript o typescript y un bloque de estilo: 
 
 Componente principal App.vue
+
 ![App.vue](./03-component-App.png)
+
 Como podemos ver, tenemos las 3 partes que constituyen un componente:
+
 1. Bloque de plantilla (HTML): `<template></template>`
 2. Bloque de script (javascript/typescript): `<script></script>` y
 3. Bloque de estilo: `<style></style>`
@@ -50,6 +56,7 @@ Cada uno de los bloques puede ser tan grande como sea necesario para el componen
 ### Bloque de plantilla (HTML)
 
 Como vemos en el ejemplo, nuestra plantilla solo contiene 2 etiquetas `img>` y `<HelloWorld>`, ésta última, es un componente. Si vemos nuestra aplicación corriendo veremos:
+
 ![componente HelloWorld](04-component-HelloWorld.png)
 
 Ésto nos dice que el componente HelloWorld tiene todas las ligas que vemos debajo del logo de VueJS.
