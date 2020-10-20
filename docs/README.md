@@ -53,7 +53,7 @@ Como podemos ver, tenemos las 3 partes que constituyen un componente:
 
 Cada uno de los bloques puede ser tan grande como sea necesario para el componente, la finalidad de éste tipo de enfoque es que cada parte de una pagina esté compuesta por varios componentes, definiremos a continuación cada uno de los bloques de un componente.
 
-### Bloque de plantilla (HTML)
+### - Bloque de plantilla (HTML)
 
 Como vemos en el ejemplo, nuestra plantilla solo contiene 2 etiquetas `img>` y `<HelloWorld>`, ésta última, es un componente. Si vemos nuestra aplicación corriendo veremos:
 
@@ -65,7 +65,7 @@ Como vemos en el ejemplo, nuestra plantilla solo contiene 2 etiquetas `img>` y `
 
 Más información acerca [aquí](https://v3.vuejs.org/guide/introduction.html#declarative-rendering)
 
-### Bloque de script
+### - Bloque de script
 
 En el bloque de script solo tenemos la inclusión del componente HelloWorld (1) y definición de nuestro componente (2).
 ```
@@ -99,11 +99,35 @@ En éste objeto vamos a definir las funciones que utilizaremos, funciones que re
 ##### methods
 Aquí definiremos las funciones que manipulan a nuestras variables y muestran los cambios en nuestra plantilla, en resumen, todo evento que haga cambios en las variables de nuestra plantilla debe ir en esta sección
 
+##### watch
+Para dar dinamismo a una aplicación es necesario que tengamos constante monitoreo de nuestas instancias o variables, para esto tenemos este apartado donde crearemos funciones que se activen cuando la variabel u objeto que estamos vigilando cambie, para agregar un evento solo necesitamos definir una función con el mismo nombre de la variable que queremos monitorear, dicha función recibirá 2 parametros, el primero es el valor actual del objeto y el segundo el valor anterior del mismo, depende de cada quien hacer las validaciones pertinentes para activar los cambios al DOM
+
+##### props
+En nuestros componentes vamos a recibir parametros a través de atributos como cualquier etiqueta html, dichos para metros se definen dentro de este objeto, debemos definir también el typo de dato que el objeto recibe y si es requerido o no.
+
 ![Bloque script con complejidad básica](05_complex_component_script.png)
 
-### Bloque de estilo
+### - Bloque de estilo
 
 El bloque de estilo se explica por si mismo.
+
+## Utilizando componentes
+Como ya hemos visto, en VueJS cada archivo contiene un componente. En ésta sección vamos a familiarizarnos con la forma en que los componentes se llaman entre si y como se puede hacer el paso de datos entre los componentes.
+
+![Atributos del componente](06_component_attributes_01.png)
+Aquí tenemos un componente en uso, como podemos ver, es una etiqueta con algunos parámetros, unos ya conocidos y otros nuevos en cuanto a la notación.
+
+Habíamos mencionado antes que VueJS tiene atributos especiales que nos ayudarán a construir elementos y a ocultarlos de ser necesario. En este ejemplo tenemos el atributo `v-for`, el cual nos ayuda a repetir esta misma etiqueta para todos los elementos de un arreglo o lista, debemos definir como referenciar cada uno de los elementos así como también que identificador daremos a cada etiqueta que repetiremos (`:key`).
+
+Hay otros atributos que están presentes como `:username` y `:entry`,  éstos son atributos que el componente requiere para poder ser mostrado. También vemos otro atributo nuevo que parace un evento `@favorite` pero no es un evento de VueJS, este evento es creado por nosotros para establecer 'comunicación' entre los componentes.
+
+![Atributos del componente bloque script](07_component_attributes_02.png)
+En ésta imagen tenemos la definición de los atributos que se piden para nuestro componente, como vemos, tenemos el objeto `props` donde especificamos qué atributos son los que el componente puede recibir, el tipo y si son requeridos o no.
+
+Hablabamos también del evento `favorite`, dentro de nuestro bloque `methods` tenemos una función, la cual será ejecutada cuando nosotros definamos.
+
+![Evento definido por usuario](08_component_event.png)
+Para ésta función en particular elegimos el evento `@click` cada vez que hagamos click en el elemento EntryItem, se ejecutará el evento favoriteEntry, va a recibir un parámetro el cual vamos a lanzar de vuelta al componente del cual fue llamada éste otro.
 
 ## Otros componentes de VueJS
 Para una lista de otros componentes y ejemplos vea la [documentación](https://vuejsexamples.com/)
