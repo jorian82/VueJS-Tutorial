@@ -104,3 +104,6 @@ Aquí definiremos las funciones que manipulan a nuestras variables y muestran lo
 ### Bloque de estilo
 
 El bloque de estilo se explica por si mismo.
+
+## Otros componentes de VueJS
+Para una lista de otros componentes y ejemplos vea la [documentación](https://vuejsexamples.com/)
