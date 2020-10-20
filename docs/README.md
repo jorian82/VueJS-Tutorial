@@ -51,7 +51,7 @@ Como podemos ver, tenemos las 3 partes que constituyen un componente:
 2. Bloque de script (javascript/typescript): `<script></script>` y
 3. Bloque de estilo: `<style></style>`
 
-Cada uno de los bloques puede ser tan grande como sea necesario para el componente, la finalidad de éste tipo de enfoque es que cada parte de una pagina esté compuesta por varios componentes, definiremos a continuación cada uno de los bloques de un componente. 
+Cada uno de los bloques puede ser tan grande como sea necesario para el componente, la finalidad de éste tipo de enfoque es que cada parte de una pagina esté compuesta por varios componentes, definiremos a continuación cada uno de los bloques de un componente.
 
 ### Bloque de plantilla (HTML)
 
@@ -60,8 +60,12 @@ Como vemos en el ejemplo, nuestra plantilla solo contiene 2 etiquetas `img>` y `
 ![componente HelloWorld](04-component-HelloWorld.png)
 
 Ésto nos dice que el componente HelloWorld tiene todas las ligas que vemos debajo del logo de VueJS.
-En caso de necesitar un elemento
 
+Éste es un componente simple, para inyectar más complejidad al componente tenemmos varias opciones para agregar a nuestras etiquetas como parametros y dentro de `{{ }}` para mostrar valores de funciones o de variables que controlamos dentro de nuestro componente.
+
+Más información acerca [aquí](https://v3.vuejs.org/guide/introduction.html#declarative-rendering)
+
+### Bloque de script
 
 En el bloque de script solo tenemos la inclusión del componente HelloWorld (1) y definición de nuestro componente (2).
 ```
@@ -74,8 +78,29 @@ En el bloque de script solo tenemos la inclusión del componente HelloWorld (1) 
     }
 }
 ```
-dentro de la definición export default, tenemos 2 variables: `name` y `components`
+Dentro de la definición export default, tenemos 2 variables: `name` y `components`
 - **name** Es el nombre con el cual vamos a llamar a la etiqueta que nos muestre la plantilla de éste componente
 - **components** Son los componentes que vamos a utilizar en nuestra plantilla
+
+Dentro de éste bloque, definiremos las funciones y procedimientos que nos ayudarán a dar más complejidad y funcionalidad a nuestro componente.
+
+Más información acerca [aquí](https://v3.vuejs.org/guide/introduction.html#declarative-rendering)
+
+Hay diferentes secciones en las que agregaremos las distintas partes que nos permiten lograr darle ésta complejidad al componente.
+
+En el ejemplo anterior donde solo teníamos un par de variables, todo en este bloque se trata de objetos o variables, tenemos otras que son reservadas como son _data_, _computed_, _methods_ por mencionar algunas. Vamos a definir para que sirven y/o como se utilizan éstos objetos.
+
+##### data
+Éste objeto es en si, una función, en la cual vamos a devolver todos los objetos (variables, arreglos, etc) que utilizaremos en nuestra plantilla.
+
+##### computed
+En éste objeto vamos a definir las funciones que utilizaremos, funciones que regresan valores que se calculan al moento como el nombre deo objeto define
+
+##### methods
+Aquí definiremos las funciones que manipulan a nuestras variables y muestran los cambios en nuestra plantilla, en resumen, todo evento que haga cambios en las variables de nuestra plantilla debe ir en esta sección
+
+![Bloque script con complejidad básica](05_complex_component_script.png)
+
+### Bloque de estilo
 
 El bloque de estilo se explica por si mismo.
